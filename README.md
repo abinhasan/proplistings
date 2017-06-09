@@ -1,0 +1,1 @@
+Simple demo angular 2 & firebase. I will create the Firebase login, logout, authentication functionality so that we can view the property listings
