@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { EditListingComponent } from './components/edit-listing/edit-listing.com
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'listings', component: ListingsComponent },
+  { path: 'listing/:id', component: ListingComponent },
   { path: 'add-listings', component: AddListingComponent }
 ]
 
@@ -41,6 +43,7 @@ const appRoutes: Routes = [
     HttpModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FlashMessagesModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes)
   ],
