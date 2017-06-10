@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Injectable()
 export class FirebaseService {
 
   listings: FirebaseListObservable<any[]>;
+  listing: FirebaseObjectObservable<any[]>;
 
   constructor(private db: AngularFireDatabase) {
     this.listings = db.list('/listings');
@@ -14,6 +15,15 @@ export class FirebaseService {
   getListings() {
     this.listings = this.db.list('/listings') as FirebaseListObservable<Listing[]>
     return this.listings;
+  }
+
+  getListingDetails(id) {
+    this.listing = this.db.object('/listings/' + id) as FirebaseObjectObservable<Listing>
+    return this.listing;
+  }
+
+  addListing(listing) {
+    console.log(listing)
   }
 }
 
