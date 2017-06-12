@@ -1,23 +1,23 @@
-<a [routerLink]="['/listings']">Go Back</a>
+<a [routerLink]="['/listings']">Back</a>
+<br />
 <h2 class="page-header">Add Listing</h2>
 <form (submit)="onAddSubmit()">
   <div class="form-group">
-    <label>Title:</label>
-    <input type="text" class="form-control" placeholder="Enter title" [(ngModel)]="title" name="title" required>
+    <label>Title</label>
+    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
   </div>
   <div class="form-group">
-    <label>City:</label>
-    <input type="text" class="form-control" placeholder="Enter city" [(ngModel)]="city" name="city" required>
+    <label>City</label>
+    <input class="form-control" type="text" [(ngModel)]="city" name="city" required>
   </div>
   <div class="form-group">
-    <label>Owner:</label>
-    <input type="text" class="form-control" placeholder="Enter owner" [(ngModel)]="owner" name="owner" required>
+    <label>Owner</label>
+    <input class="form-control" type="text" [(ngModel)]="owner" name="owner" required>
   </div>
   <div class="form-group">
-    <label>Bedrooms:</label>
-    <input type="number" class="form-control" placeholder="Enter bedrooms" [(ngModel)]="bedrooms" name="bedrooms" required>
+    <label>Bedrooms</label>
+    <input class="form-control" type="number" [(ngModel)]="bedrooms" name="bedrooms" required>
   </div>
-
   <div class="form-group">
     <label>Type</label>
     <select class="form-control" type="text" [(ngModel)]="type" name="type" required>
@@ -26,14 +26,13 @@
       <option value="Apartment">Apartment</option>
     </select>
   </div>
-
   <div class="form-group">
-    <input type="file" id="image" class="form-control" [(ngModel)]="image" name="image">
+    <label>Image Link</label>
+    <input class="form-control" type="text" [(ngModel)]="image" name="image" required>
   </div>
   <div class="form-group">
-    <label>Price:</label>
-    <input type="text" class="form-control" placeholder="Enter price" [(ngModel)]="price" name="price" required>
+    <label>Price</label>
+    <input class="form-control" type="text" [(ngModel)]="price" name="price" required>
   </div>
-
-  <button type="submit" value="submit" class="btn btn-success">Submit</button>
+  <input type="submit" value="submit" class="btn btn-success">
 </form>

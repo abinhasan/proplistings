@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AddListingComponent implements OnInit {
 
-  title: any;
-  type: any;
-  image: any;
-  city: any;
-  owner: any;
-  bedrooms: any;
-  price: any;
+  title:any;
+  owner:any;
+  city:any;
+  bedrooms:any;
+  price:any;
+  type:any;
+  image:any;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -28,16 +28,16 @@ export class AddListingComponent implements OnInit {
   onAddSubmit() {
     let listing = {
       title: this.title,
-      type: this.type,
-      image: this.image,
       city: this.city,
       owner: this.owner,
-      bedrooms: this.bedrooms,
-      price: this.price
+      bedrooms:this.bedrooms,
+      price: this.price,
+      type: this.type,
+      image: this.image
     }
 
     this.firebaseService.addListing(listing);
-    this.router.navigate(['listing']);
+    this.router.navigate(['listings']);
   }
 
 }
